@@ -50,7 +50,7 @@ Response (Example):
 }
 '''
 # Load a random job posting and predict if it is real or fake
-@app.route('/random_job', methods=['GET'])
+@app.route('/random_job', methods=['GET', 'POST'])
 def random_job():
     try:
         # Include a ratio of 75/25 real to fake job postings
@@ -96,7 +96,7 @@ def random_job():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
 
 # Use for Testing API
 # curl http://ipaddress:Port/random_job
