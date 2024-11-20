@@ -12,3 +12,10 @@ code {
     monospace;
 }
 
+.real {
+  color: green;
+}
+
+.fake {
+  color: red;
+}

@@ -38,8 +38,10 @@ function App() {
           <h2>Job Title: {jobData.job.title}</h2>
           <h3>Company: {companies[Math.floor(Math.random() * companies.length)]}</h3>
           <h4>Function: {jobData.job.function}</h4>
-          <p><b>Description:</b> {truncateDescription(jobData.job.description, 250)}</p>
-          <h4>Prediction: {jobData.prediction}</h4>
+          <p><b>Description:</b> {truncateDescription(jobData.job.description, 150)}</p>
+          <h4 className={`prediction ${jobData.prediction === 'Real' ? 'real' : 'fake'}`}>
+            Prediction: {jobData.prediction}
+          </h4>
         </div>
       )}
 
