@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { truncateDescription } from './truncate';
+import { companies } from './companyList';
 
 function App() {
-  const [jobData, setJobData] = useState(null); // State to hold job data
-  const [loading, setLoading] = useState(false); // State for loading status
+  const [jobData, setJobData] = useState(null); 
+  const [loading, setLoading] = useState(false); 
 
   // Function to fetch a random job from the backend
   const fetchRandomJob = async () => {
@@ -23,26 +24,28 @@ function App() {
 
   return (
     <div>
-      <h1>Job Classification</h1>
+      <h1>Introducing...netWork <i>DinoDetect</i></h1>
+      <h2>A new way to job search</h2>
 
       {/* Button to fetch new random job */}
       <button onClick={fetchRandomJob} disabled={loading}>
-        {loading ? 'Loading...' : 'Get Random Job'}
+        {loading ? 'Loading...' : 'Next Job Posting'}
       </button>
 
       {/* Display job data if available */}
       {jobData && (
         <div>
           <h2>Job Title: {jobData.job.title}</h2>
-          <h3>Function: {jobData.job.function}</h3>
-          <p>Description: {truncateDescription(jobData.job.description, 250)}</p>
+          <h3>Company: {companies[Math.floor(Math.random() * companies.length)]}</h3>
+          <h4>Function: {jobData.job.function}</h4>
+          <p><b>Description:</b> {truncateDescription(jobData.job.description, 250)}</p>
           <h4>Prediction: {jobData.prediction}</h4>
         </div>
       )}
 
       {/* Display a message when no job data is available */}
       {!jobData && !loading && (
-        <p>Click "Get Random Job" to fetch a job posting!</p>
+        <p>Click "Next Job Posting" to run the <i>DinoDetect</i> job post classifier!</p>
       )}
     </div>
   );
