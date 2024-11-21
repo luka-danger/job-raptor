@@ -16,7 +16,7 @@ database = client['job_postings_db']
 collection = database['postings']
 
 # Refresg Database
-#collection.delete_many({})
+# collection.delete_many({})
 
 # Convert data to dictionary and upload to MongoDB
 collection.insert_many(data.to_dict('records'))
