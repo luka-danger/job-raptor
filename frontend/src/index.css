@@ -47,8 +47,7 @@ button:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 2rem 2rem 0;
-  margin: 0;
+  padding: 2rem;
 }
 
 .prediction {
@@ -121,6 +120,18 @@ h3 {
 @media (max-width: 340px) {
   button,
   .slogan {
+    display: none;
+  }
+}
+
+@media (max-height: 647px) {
+  .slogan {
+    display: none;
+  }
+}
+
+@media (max-height: 289px) {
+  .button {
     display: none;
   }
 }

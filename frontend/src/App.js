@@ -61,17 +61,18 @@ function App() {
         {!jobData && !loading && (
           <h3>Click "Next Job Posting" to run the <i>Job Raptor</i> job post classifier!</h3>
         )}
-      </div>
-
-      <div className='footer'>
-        <div className='logo'>
-          <img className='dino' src={logo} alt='loading...' />
-          <div className='typing'>
-            <span className='sentence'>{typedText}</span>
-            <span className='cursor'></span>
+      
+        <div className='footer'>
+          <div className='logo'>
+            <img className='dino' src={logo} alt='loading...' />
+            <div className='typing'>
+              <span className='sentence'>{typedText}</span>
+              <span className='cursor'></span>
+            </div>
           </div>
         </div>
       </div>
+      
     </div>
   );
 }
