@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { truncateDescription } from './truncate';
-import { companies } from './companyList';
 import logo from './velociraptor.gif';
-import { useAnimation } from './useAnimation'; // Import the custom animation hook
+// Import the custom animation hook
+import { useAnimation } from './useAnimation'; 
 
 function App() {
   const [jobData, setJobData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [companyName, setCompanyName] = useState('');
 
   // Use the custom hook for animation
   const typedText = useAnimation(); 
@@ -18,10 +17,8 @@ function App() {
     setLoading(true);
     try {
       // Get job posting from Node backend server
-      const response = await axios.get('http://localhost:5002/random_job');
+      const response = await axios.get('http://localhost:5001/api/random-posting');
       setJobData(response.data);
-
-      setCompanyName(companies[Math.floor(Math.random() * companies.length)])
 
     } catch (error) {
       console.error('Error fetching random job:', error);
@@ -48,9 +45,9 @@ function App() {
         {/* Display job data if available */}
         {jobData && (
           <div>
-            <h2>Job Title: {jobData.job.title}</h2>
-            <h3>Company: {companyName}</h3>
-            <p className='description'><b>Description:</b> {truncateDescription(jobData.job.description, 50)}</p>
+            <h2>Job Title: {jobData.posting.title}</h2>
+            <h3>Company: {jobData.posting.company}</h3>
+            <p className='description'><b>Description:</b> {truncateDescription(jobData.posting.description, 50)}</p>
             <h4 className={`prediction ${jobData.prediction === 'Real' ? 'real' : 'fake'}`}>
               Likely {jobData.prediction}
             </h4>
