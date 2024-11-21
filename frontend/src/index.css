@@ -42,17 +42,18 @@ button:active {
 }
 
 .lower {
-  height: 60vh;
-  background-color: rgb(224, 222, 222);
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 2rem 2rem 0;
+  margin: 0;
 }
 
 .prediction {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  margin: 0;
 }
 
 .description {
@@ -62,12 +63,6 @@ button:active {
 
 h3 {
   font-size: 1.25rem;
-}
-
-.footer {
-  height: 20vh;
-  background-color: cornflowerblue;
-  padding: 1rem;
 }
 
 .real {
@@ -107,3 +102,32 @@ h3 {
   100% { opacity: 0 }
 }
 
+@media (max-width: 687px) {
+  h2, 
+  h3,
+  .description,
+  .prediction {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 340px) {
+  button,
+  .slogan {
+    display: none;
+  }
+}
+
+@media (max-width: 340px) {
+  button,
+  .slogan {
+    display: none;
+  }
+}
+
+/* Hide all items */
+@media (max-width: 200px) {
+  .container {
+    display: none;
+  }
+}
