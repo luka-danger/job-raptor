@@ -22,13 +22,12 @@ app.get('/random_job', async (req, res) => {
 
 // Existing prediction route
 app.post('/api/predict', async (req, res) => {
-    const { title, function: jobFunction, description } = req.body;
+    const { title, description } = req.body;
 
     try {
         // Get job posting details from Flask API
         const response = await axios.post('http://127.0.0.1:5001/api/predict', {
             title,
-            function: jobFunction,
             description,
         });
 

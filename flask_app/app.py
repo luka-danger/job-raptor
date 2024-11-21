@@ -9,7 +9,7 @@ app = Flask(__name__)
 data = pd.read_csv('data/fake_job_postings.csv')
 
 # Clean the dataset: Remove rows with missing title, function, or description
-data = data.dropna(subset=['title', 'function', 'description'])
+data = data.dropna(subset=['title', 'description'])
 
 # Separate real and fake job postings
 fake_jobs = data[data['fraudulent'] == 1]  # Fake job postings (fraudulent == 1)
@@ -26,13 +26,12 @@ it is real or fake. It uses a sample split of 75% real job postings and
 25% fake job postings to display the functionality of the model. After 
 splitting the sample job postings, it combines into one set of sample
 posts and then randomly selects one to predict via the trained model. 
-The response (title, function, description, and prediciton) are returned
+The response (title, description, and prediciton) are returned
 in JSON format. 
 
 Example: 
 A GET request to the '/random_job' endpoint will return a JSON response containing:
 - A job title ('Administrative Assistant')
-- A job function ('Administrative')
 - A description ('This is a fake job posting example')
 - The model's prediction: 'Fake' or 'Real' depending on the trained model's classification
 
@@ -44,7 +43,6 @@ Response (Example):
     "job": {
         "description": "This is a fake job posting example"
         "title": "Administrative Assistant",
-        "function": "Administrative",
     },
     "prediction": "Fake"
 }
@@ -69,13 +67,11 @@ def random_job():
 
         # Extract the title, function, and description for prediction
         job_title = random_job['title']  
-        function = random_job['function']
         description = random_job['description']
 
         # Prepare the data in the same format as the training data
         input_data = pd.DataFrame([{
             'title': job_title,
-            'function': function,
             'description': description
         }])
 
@@ -86,7 +82,6 @@ def random_job():
         return jsonify({
             'job': {
                 'title': job_title,  
-                'function': function,
                 'description': description
             },
             'prediction': 'Fake' if prediction[0] == 1 else 'Real'
