@@ -1,15 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Darker Grotesque", serif;
+}
+.title {
+  font-size: 4rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+button {
+  background-color: cornflowerblue;
+  font-family: "Darker Grotesque", serif;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: rgb(161, 187, 233);
+}
+
+button:active {
+  background-color: rgb(79, 112, 171);
+}
+
+.upper {
+  height: 20vh;
+  background-color: cornflowerblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.lower {
+  height: 60vh;
+  background-color: rgb(224, 222, 222);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.prediction {
+  font-size: 2.5rem;
+}
+
+.description {
+  font-size: 1.5rem;
+  text-wrap: wrap;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+.footer {
+  height: 20vh;
+  background-color: cornflowerblue;
+  padding: 1rem;
 }
 
 .real {
@@ -19,3 +77,33 @@ code {
 .fake {
   color: red;
 }
+
+.dino {
+  height: 110px;
+  width: 110px;
+}
+
+.typing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Darker Grotesque", serif;
+  font-size: 2.5rem;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 42px;
+  background-color: white;
+  margin-left: 8px;
+  animation: blink .6s linear infinite alternate;
+}
+
+@keyframes blink {
+  0% { opacity: 1 }
+  40% { opacity: 1 }
+  60% { opacity: 0 }
+  100% { opacity: 0 }
+}
+
