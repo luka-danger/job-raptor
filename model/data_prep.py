@@ -48,12 +48,12 @@ y_pred = pipeline.predict(X_test)
 print(classification_report(y_test, y_pred))
 
 # Save trained model to file
-joblib.dump(pipeline, 'data/decision_tree_model_pipeline.pkl')
+joblib.dump(pipeline, 'model/decision_tree_model_pipeline.pkl')
 
 
 # %%
 # Load the trained model pipeline
-model = joblib.load('data/decision_tree_model_pipeline.pkl')
+model = joblib.load('model/decision_tree_model_pipeline.pkl')
 
 # Example prediction
 example = pd.DataFrame([{'title': 'Administrative Assistant', 'description': 'This is a fake job posting example'}])
