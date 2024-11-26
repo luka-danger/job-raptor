@@ -13,13 +13,15 @@ Frontend UI: React and JavaScript
 ## Screenshots: 
 ![Demo](/screenshots/demo.gif)
 
-![CLI](/screenshots/cli.gif)
+![CLI-GIF](/screenshots/cli.gif)
 
 ![Home](/screenshots/home.png)
 
 ![Real](/screenshots/real.png)
 
 ![Fake](/screenshots/fake.png)
+
+![CLI](/screenshots/cli.png)
 
 ![Diagram](/screenshots/diagram.png)
 

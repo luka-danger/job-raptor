@@ -1,5 +1,7 @@
 # Python Frameworks
-Flask
+flask
+flask_cors
+pymongo
 
 # Packages
 Pymongo
