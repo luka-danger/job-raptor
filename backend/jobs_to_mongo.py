@@ -15,7 +15,7 @@ client = MongoClient('mongodb://localhost:27017')
 database = client['job_postings_db']
 collection = database['postings']
 
-# Refresg Database
+# Refresh Database
 # collection.delete_many({})
 
 # Convert data to dictionary and upload to MongoDB
