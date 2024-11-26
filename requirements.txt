@@ -1,7 +1,20 @@
 # Python Frameworks
 Flask
 
+# Packages
+Pymongo
+
 # Machine Learning Libraries
 joblib 
 scikit-learn 
 pandas
+
+# Notebooks
+Jupyter # For data visualization 
+
+# Database 
+MongoDB
+
+# Front End
+React
+Axios
